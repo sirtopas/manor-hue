@@ -1,4 +1,32 @@
-<div *ngFor="let light of lights">
-  {{light.name}} {{light.id}}
-  <input type="checkbox" [(ngModel)]="light.state.on" (ngModelChange)="updateStatus(light.id)" />
+<div class="col-sm-12">
+  <div *ngFor="let light of lights">
+    <div class="col-sm-3">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          {{light.name}}
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-12">
+            <div class="col-sm-4">
+              <label>Id:</label>
+            </div>
+            <div class="col-sm-8">
+              {{light.id}}
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="col-sm-4">
+              <label>On:</label>
+            </div>
+            <div class="col-sm-8">
+              <label class="switch">
+              <input type="checkbox" [(ngModel)]="light.state.on" (ngModelChange)="updateStatus(light.id)" />
+  <div class="slider round"></div>
+</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
