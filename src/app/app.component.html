@@ -1,3 +1,4 @@
-<h1>
-  {{title}}
-</h1>
+<div *ngFor="let light of lights">
+  {{light.name}} {{light.id}}
+  <input type="checkbox" [(ngModel)]="light.state.on" (ngModelChange)="updateStatus(light.id)" />
+</div>
