@@ -17,9 +17,14 @@ export class BridgeService {
 	}
 
 	public updateStatus(lightId: number, state: boolean) {
-		console.log(state);
 		return this.http
 			.put(this.baseApiUrl + 'lights/' + lightId + '/state/', { 'on': state })
+			.map(res => res.json());
+	}
+
+	public colorLoop(lightId: number) {
+		return this.http
+			.put(this.baseApiUrl + 'lights/' + lightId + '/state/', { 'effect': 'colorloop' })
 			.map(res => res.json());
 	}
 }

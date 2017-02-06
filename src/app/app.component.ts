@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
 						state: res[obj].state
 					});
 				}
-				console.log(this.lights);
 			});
 	}
 
@@ -35,5 +34,11 @@ export class AppComponent implements OnInit {
 			.subscribe(res => {
 
 			});
+	}
+
+	public partyTime(lightId: number) {
+		this.bridgeService.colorLoop(lightId).subscribe(res => {
+
+		});
 	}
 }
